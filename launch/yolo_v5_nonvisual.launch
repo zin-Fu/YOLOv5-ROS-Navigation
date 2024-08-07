@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Load Parameter -->
+  
+  <param name="yolov5_path"       value="$(find yolov5_ros)/yolov5"/>
+  <param name="use_cpu"           value="false" />
+
+  <!-- Start yolov5 and ros wrapper -->
+  <node pkg="yolov5_ros" type="yolo_v5_nonvisual.py" name="yolov5_ros" output="screen" >
+    <param name="weight_path"       value="$(find yolov5_ros)/weights/0707-big-real/best.pt"/>
+    <param name="image_topic"       value="/usb_cam/image_raw" />
+    <param name="pub_topic"         value="/yolov5/BoundingBoxes" />
+    <param name="camera_frame"       value="camera_color_frame"/>
+    <param name="conf"              value="0.95" />
+  </node>
+  <include file="$(find ucar_cam)/launch/cam.launch"/>
+</launch>

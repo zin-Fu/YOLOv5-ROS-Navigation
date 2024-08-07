@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Load Parameter -->
+  
+  <param name="yolov5_path" value="$(find yolov5_ros)/yolov5"/>
+  <param name="use_cpu" value="false" />
+
+  <!-- Camera Parameters -->
+  <param name="camera_matrix" value="[[417.4378384222683, 0, 316.1704948005648], [0, 416.629339408546, 237.6943393173432], [0, 0, 1]]" />
+  <param name="dist_coeffs" value="[-0.2994228197129783, 0.0762218269094439, -0.001955744778229992, -0.0005395207018594055, 0]" />
+  <param name="calibration_result" value="[-0.425014, -0.453344, -0.58136, 0.525227, 0.00570175, -0.00685251, -0.23661]" />
+
+  <!-- Start yolov5 and ros wrapper -->
+  <node pkg="yolov5_ros" type="yolo_v5_visual.py" name="yolov5_ros" output="screen">
+    <param name="weight_path" value="$(find yolov5_ros)/weights/0715/best.pt"/>
+    <param name="image_topic" value="/usb_cam/image_raw" />
+    <param name="pub_topic" value="/yolov5/BoundingBoxes" />
+    <param name="camera_frame" value="camera_color_frame"/>
+    <param name="conf" value="0.8" />
+  </node>
+  <include file="$(find ucar_cam)/launch/cam.launch"/>
+</launch>
