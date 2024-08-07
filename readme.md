@@ -65,7 +65,6 @@ roslaunch yolov5_nonvisual yolo_v5_nonvisual.launch
 To run the navigation-enhanced object detection node, first start the lidar node to receive data, and then launch the navigation node:
 
 ```bash
-roslaunch ydlidar ydlidar.launch 
 roslaunch yolov5_ros_visual yolo_v5_visual.launch
 ```
 
