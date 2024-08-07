@@ -71,6 +71,10 @@ roslaunch yolov5_ros_visual yolo_v5_visual.launch
 
 The result of running the navigation-enhanced object detection node is shown in `result.gif`.
 
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 ### ⭐How to Perform Camera-Lidar Calibration to Obtain `calibration_result`
 
 Refer to [TurtleZhong/camera_lidar_calibration_v2: ROS VERSION: A tool used for calibrating a 2D laser range finder (LRF) and camera](https://github.com/TurtleZhong/camera_lidar_calibration_v2) for detailed instructions.
