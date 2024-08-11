@@ -68,9 +68,9 @@ To run the navigation-enhanced object detection node, first start the lidar node
 roslaunch yolov5_ros_visual yolo_v5_visual.launch
 ```
 
-The result of running the navigation-enhanced object detection node is shown in `result.gif`.
+The result of running the navigation-enhanced object detection node is shown as below: 
 
-
+![Result](result.gif)
 
 ### ⭐How to Perform Camera-Lidar Calibration to Obtain `calibration_result`
 
